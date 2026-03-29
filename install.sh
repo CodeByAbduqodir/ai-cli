@@ -40,7 +40,8 @@ fi
 
 # Install dependencies
 echo "==> Installing Python dependencies..."
-pip3 install -q -r "$INSTALL_DIR/requirements.txt"
+pip3 install -q --break-system-packages -r "$INSTALL_DIR/requirements.txt" 2>/dev/null \
+    || pip3 install -q -r "$INSTALL_DIR/requirements.txt"
 
 # Create /usr/local/bin/ai wrapper
 echo "==> Creating 'ai' command at $BIN_PATH..."

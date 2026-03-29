@@ -3,6 +3,7 @@ import os
 import subprocess
 import json
 import requests
+import readline
 from pathlib import Path
 from rich.console import Console
 from rich.prompt import Confirm, Prompt
@@ -19,7 +20,7 @@ console = Console()
 
 # === CONFIG ===
 API_KEY  = os.getenv("OPENROUTER_API_KEY")
-MODEL    = os.getenv("AI_MODEL", "anthropic/claude-3.5-sonnet")
+MODEL    = os.getenv("AI_MODEL", "anthropic/claude-sonnet-4.6")
 SITE_URL = "https://github.com/local/ai-cli"
 SITE_NAME = "ai-cli"
 
